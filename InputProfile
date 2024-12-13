@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Input</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+    margin: 0;
+    line-height: 1.5;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    overflow: hidden;
+    
+    /* Add Flexbox styling to center content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure body takes full height of the viewport */
+    }
+
+    /* Background Image with Blur */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('https://storage.googleapis.com/a1aa/image/5UXHBn8xDx52LdUZGqBE8TyYTro0FAKnzdeANajm4pWsVH7JA.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      filter: blur(10px);
+      z-index: -1;
+      height: 100%;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+      z-index: -1;
+    }
+
+    /* Fixed Header Style */
+    header {
+      background-color: #0056b3;
+      width: 100%;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: fixed;  /* Make the header fixed at the top */
+      top: 0;
+      left: 0;
+      z-index: 10;  /* Ensure the header stays on top */
+    }
+
+    header .logo {
+      width: 30px;
+      height: 30px;
+      background-color: white;
+      border-radius: 50%;
+      margin-left: 10px;
+      /* Replace with your logo image */
+      background-image: url('file:///C:/Users/ASUS/Downloads/logo%20calorie%20pro.jpg'); /* Placeholder logo */
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Adjust the rest of the content to not overlap the fixed header */
+    .wrapper {
+  background: #fff;
+  width: 90%;
+  max-width: 800px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 50px; /* Remove the margin-top */
+}
+
+    h2 {
+      background: #0056b3;
+      color: white;
+      letter-spacing: 0.1rem;
+      padding: 1rem;
+      text-align: center;
+      font-size: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    form,
+    input,
+    textarea,
+    button {
+      font-family: inherit;
+      font-size: initial;
+    }
+
+    .form-group label {
+      display: block;
+      margin: 1.5rem 0 0.5rem;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="number"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 1.2rem;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      outline: none;
+      border-radius: 8px;
+      transition: border-color 0.3s;
+      font-size: 1.4rem;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group input[type="email"]:focus,
+    .form-group input[type="number"]:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #0056b3;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 1.2rem;
+      background-color: #0056b3; /* Blue color */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group button:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .button-container button {
+      width: 45%;
+      padding: 12px;
+      margin: 5px;
+      border-radius: 8px;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .button-container .back-btn {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    .button-container .back-btn:hover {
+      background-color: #bbb;
+    }
+
+    .button-container .recommendation-btn {
+      background-color: #0056b3; /* Blue */
+      color: white;
+    }
+
+    .button-container .recommendation-btn:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    /* Responsive design */
+    @media screen and (min-width: 576px) {
+      .wrapper {
+        width: 70%;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .wrapper {
+        width: 55%;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      .wrapper {
+        width: 45%;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      .wrapper {
+        width: 35%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div>Calorie Pro</div>
+    <div class="logo"></div>
+  </header>
+
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <div class="wrapper">
+    <h2>Profile Input</h2>
+    <form action="/submit-profile" method="POST">
+      
+      <!-- Gender -->
+      <div class="form-group">
+        <label for="gender">Sex</label>
+        <select id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+
+      <!-- Weight -->
+      <div class="form-group">
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" name="weight" required min="1" step="0.1">
+      </div>
+
+      <!-- Height -->
+      <div class="form-group">
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" name="height" required min="1" step="1">
+      </div>
+
+      <!-- Goal -->
+      <div class="form-group">
+        <label for="goal">Goal</label>
+        <select id="goal" name="goal" required>
+          <option value="lose_weight">Lose Weight</option>
+          <option value="maintain_weight">Maintain Weight</option>
+          <option value="gain_muscle">Gain Muscle</option>
+        </select>
+      </div>
+
+      <!-- Button Section -->
+      <div class="button-container">
+        <button type="button" class="back-btn" onclick="goBack()">Back</button>
+        <button type="submit" class="recommendation-btn">Recommendation</button>
+      </div>
+      
+    </form>
+  </div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>
