@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaloriePro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #0056b3;
+            padding: 10px 20px;
+            position: relative;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+            z-index: 10;
+        }
+        
+        .navbar .input-profile-btn {
+            margin-left: auto; 
+            color: white;
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: 0.3s;
+            background-color: #0056b3;  /* Set the button color */
+        }
+
+        .navbar .input-profile-btn:hover {
+            background-color: #004494; /* Hover effect */
+            text-decoration: underline;
+            text-decoration: none;
+        }
+        
+        .navbar h1 {
+            color: white;
+            font-size: 1.8rem;
+            margin: 0;
+            margin-right: 20px;
+        }
+
+        .navbar .logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 20px;
+            background-color: wheat;
+            flex-wrap: wrap;
+            border-top-left-radius: 300px;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            text-align: center;
+            height: 450px;
+        }
+
+        header .text-content {
+            flex: 1;
+            max-width: 50%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin-bottom: 35px;
+            color: #555;
+        }
+
+        header .btn {
+          padding: 10px 20px;
+          font-size: 1rem;
+          background-color: #0056b3;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: 0.3s;
+          display: inline-block;
+          margin-right: 15px; /* Adds space between buttons */
+      }
+
+        header .btn:hover {
+            background-color: #004494;
+        }
+
+        header img {
+            flex: 1;
+            max-width: 50%;
+            height: 100%;
+            object-fit: cover;
+            transform: translateX(8%);
+            transition: 0.3s ease;
+        }
+
+        .features {
+            background-color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .feature-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background: #4996e7;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            text-align: center;
+            color: white;
+        }
+
+        .feature-card .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 2px solid white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .about {
+            padding: 10px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        .cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 50px;
+            background-color: wheat;
+            flex-wrap: wrap;
+            text-align: center;
+            max-width: 100%;
+            margin: 0 auto;
+            height: 450px;
+        }
+
+        .cta img {
+            max-width: 50%;
+            flex: 1;
+            height: 100%;
+            margin-right: 20px;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .cta-content {
+            flex: 1;
+            max-width: 50%;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .cta .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .cta .btn:hover {
+            background-color: #004494;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                height: auto;
+            }
+
+            header .text-content {
+                max-width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            header img {
+                max-width: 80%;
+                margin: 0 auto;
+                transform: none;
+            }
+
+            .cta {
+                flex-direction: column;
+                padding: 30px 20px;
+                height: auto;
+            }
+
+            .cta img {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
+            .cta-content {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+
+            .features .feature-grid {
+                flex-direction: column;
+            }
+
+            .feature-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>CaloriePro</h1>
+        <img src="file:///C:/Users/ASUS/Downloads/logo%20calorie%20pro.jpg" alt="CaloriePro Logo" class="logo">
+        <a href="inputProfile.html" class="input-profile-btn">Input Profile</a>
+    </div>
+    
+
+    <header>
+      <div class="text-content">
+          <h1>Men Sana in Corpore Sano</h1>
+          <p>Create a healthy body and a prosperous soul with our easy calorie tracking tool.</p>
+          <a href="Listmakanan.html" class="btn">Start Counting Now!</a>
+          <!-- Added new button here -->
+          <a href="workout.html" class="btn">Make your Workout Schedule</a>
+      </div>
+      <img src="impal2.jpg" alt="Healthy Eating">
+  </header>
+  
+
+    <section class="features">
+        <h2>Welcome to <span style="color: #0056b3;">CaloriePro</span></h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <img src="icon1.jpg" alt="Icon" class="icon">
+                <h3>Track Calories Easily and Accurately</h3>
+                <p>Track the calories you consume every day quickly and accurately.</p>
+            </div>
+            <div class="feature-card">
+                <img src="icon2.jpg" alt="Icon" class="icon">
+                <h3>Extensive Food Database</h3>
+                <p>Find thousands of foods in our comprehensive database.</p>
+            </div>
+            <div class="feature-card">
+                <img src="icon3.jpg" alt="Icon" class="icon">
+                <h3>Visual Progress Tracking</h3>
+                <p>Monitor your progress with easy-to-understand visual graphs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>A Glance At CaloriePro</h2>
+        <p>
+            CaloriePro is your reliable partner in achieving a healthier lifestyle. Our platform is designed to help you track your daily calorie intake effortlessly while providing insights into your dietary habits.
+            Whether you're looking to lose weight, gain muscle, or maintain your current physique, we have tools tailored to your needs.
+        </p>
+        <p>
+            With an extensive food database, accurate calorie tracking, and visual progress monitoring, we ensure your journey to a better you is simple and effective. Join thousands of users who have transformed their lives with CaloriePro!
+        </p>
+    </section>
+
+    <section class="cta">
+        <img src="impal gambar.jpg" alt="Progress Tracking">
+        <div class="cta-content">
+            <h2>Let’s count your calories now!</h2>
+            <a href="Listmakanan.html" class="btn">Count Now!</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 CaloriePro. All rights reserved.
+    </footer>
+
+</body>
+</html>
