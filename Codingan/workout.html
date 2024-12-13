@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Schedule</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #003f8a;
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #0056b3;
+            padding: 15px 20px;
+            position: relative;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-logo h1 {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .navbar-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .back-btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            display: inline-block;
+            margin-right: 30px;
+        }
+
+        .back-btn:hover {
+            background-color: #004494;
+        }
+
+        .schedule {
+            margin: 40px 0;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid #0056b3;
+        }
+
+        .schedule table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .schedule table th, .schedule table td {
+            border: 1px solid #dce7f5;
+            text-align: left;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+
+        .schedule table th {
+            background-color: #0056b3;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .schedule table tr:nth-child(even) {
+            background-color: #f7faff;
+        }
+
+        .schedule table tr:hover {
+            background-color: #e3f0ff;
+        }
+
+        .btn {
+            background: linear-gradient(to right, #0056b3, #003f8a);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #003f8a, #002d6b);
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .videos {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .video-card {
+            max-width: 320px;
+            margin: auto;
+            text-align: center;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+            background-color: white;
+            border: 2px solid #cce0ff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 180px;
+            border: none;
+        }
+
+        .video-card p {
+            font-size: 1.2rem;
+            padding: 15px;
+            color: #0056b3;
+            background: #f3faff;
+            border-top: 1px solid #dce7f5;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background: linear-gradient(to right, #003f8a, #0056b3);
+            color: white;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #cce0ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        select, option {
+            padding: 8px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            <h1>CaloriePro</h1>
+            <img src="file:///C:/Users/ASUS/Downloads/logo%20calorie%20pro.jpg" alt="CaloriePro Logo">
+        </div>
+        <a href="dashboard.html" class="back-btn">Back to Dashboard</a>
+    </div>
+    <div class="container">
+        <h1>Weekly Workout Schedule</h1>
+        
+        <div class="schedule">
+            <h2>Plan Your Workout</h2>
+            <table id="scheduleTable">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Workout Type</th>
+                        <th>Duration</th>
+                        <th>Calories Burned</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <select onchange="updateCalories(this)">
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                                <option value="Sunday">Sunday</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select onchange="updateCalories(this)">
+                                <option value="cardio">Cardio</option>
+                                <option value="strength">Strength Training</option>
+                                <option value="yoga">Yoga</option>
+                                <option value="hiit">HIIT</option>
+                                <option value="pilates">Pilates</option>
+                                <option value="dance">Dance</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select onchange="updateCalories(this)">
+                                <option value="30">30 minutes</option>
+                                <option value="40">40 minutes</option>
+                                <option value="20">20 minutes</option>
+                                <option value="15">15 minutes</option>
+                            </select>
+                        </td>
+                        <td><span class="calories-burned">0</span> kcal</td>
+                        <td><button class="btn" onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                    <!-- Repeat the same structure for other days -->
+                </tbody>
+            </table>
+            <button class="btn" onclick="addRow()">Add Row</button>
+        </div>
+
+        <div class="videos">
+            <h2>Recommended Workout Videos</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/2L2lnxIcNmo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>10-Minute Fat Burning HIIT Workout</p>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/5ARgeR1rMTo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>Full Body Cardio Workout - No Equipment</p>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/zmxPXaeEXBU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>30-Minute Dance Fitness for Weight Loss</p>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/sPbf-KUISjY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>Quick Strength Training for Beginners</p>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/v7AYKMP6rOE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>Relaxing Yoga for Flexibility</p>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p> &copy; 2024 CaloriePro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Calories burned per minute for each workout type
+        const caloriesBurnedPerMinute = {
+            cardio: 8, // Example: Cardio burns 8 calories per minute
+            strength: 6, // Strength training burns 6 calories per minute
+            yoga: 4, // Yoga burns 4 calories per minute
+            hiit: 12, // HIIT burns 12 calories per minute
+            pilates: 6, // Pilates burns 6 calories per minute
+            dance: 7 // Dance burns 7 calories per minute
+        };
+
+        function updateCalories(selectElement) {
+            const row = selectElement.closest('tr');
+            const workoutType = row.querySelectorAll('select')[1].value;
+            const duration = parseInt(row.querySelectorAll('select')[2].value);
+            
+            const calories = caloriesBurnedPerMinute[workoutType] * (duration / 30); // Assuming 30 minutes as a base unit
+            row.querySelector('.calories-burned').innerText = calories.toFixed(2);
+        }
+
+        function deleteRow(button) {
+            const row = button.closest('tr');
+            row.remove();
+        }
+
+        function addRow() {
+            const table = document.getElementById('scheduleTable').querySelector('tbody');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>
+                    <select onchange="updateCalories(this)">
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="updateCalories(this)">
+                        <option value="cardio">Cardio</option>
+                        <option value="strength">Strength Training</option>
+                        <option value="yoga">Yoga</option>
+                        <option value="hiit">HIIT</option>
+                        <option value="pilates">Pilates</option>
+                        <option value="dance">Dance</option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="updateCalories(this)">
+                        <option value="30">30 minutes</option>
+                        <option value="40">40 minutes</option>
+                        <option value="20">20 minutes</option>
+                        <option value="15">15 minutes</option>
+                    </select>
+                </td>
+                <td><span class="calories-burned">0</span> kcal</td>
+                <td><button class="btn" onclick="deleteRow(this)">Delete</button></td>
+            `;
+            table.appendChild(newRow);
+        }
+    </script>
+</body>
+</html>

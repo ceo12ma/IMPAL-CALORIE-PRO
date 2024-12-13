@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaloriePro</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f9;
+        }
+
+        /* Fixed navbar at the top */
+        .navbar {
+            width: 100%;
+            background-color: #0056b3;
+            padding: 15px 20px;
+            position: relative;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-logo h1 {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .navbar-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .navbar-menu {
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-menu li {
+            list-style-type: none;
+        }
+
+        .navbar-menu a {
+            margin-right: 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-menu a:hover {
+            background-color: #004494;
+        }
+
+        /* Header Section */
+        header {
+            margin-top: 80px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            background-color: #dddddd;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .text-content {
+            flex: 1;
+            max-width: 600px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        header .btn {
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        header .btn:hover {
+            background-color: #004494;
+        }
+
+        header img {
+            flex: 1;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .features .feature-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background: #0c6fda;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 320px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        /* Call to Action Section */
+        .cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 20px;
+            background-color: #f8f8f8;
+            color: rgb(41, 41, 41);
+            flex-wrap: wrap;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta img {
+            max-width: 400px;
+            flex: 1;
+            margin-right: 20px;
+            border-radius: 12px;
+        }
+
+        .cta-content {
+            flex: 1;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .cta .btn {
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            background-color: #0056b3;
+            color: #f4f4f9;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta .btn:hover {
+            background-color: #004494;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #0056b3;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #f4f4f9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-logo">
+            <h1>CaloriePro</h1>
+            <img src="file:///C:/Users/ASUS/Downloads/logo%20calorie%20pro.jpg" alt="CaloriePro Logo">
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="Tampilan awal.html">HOME</a></li>
+            <li><a href="about.html">ABOUT ME</a></li>
+            <li><a href="contact.html">CONTACT ME</a></li>
+        </ul>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="text-content">
+            <h1>Men Sana in Corpore Sano</h1>
+            <p>Create a healthy body and a prosperous soul with our easy calorie tracking tool.</p>
+            <a href="Listmakanan.html" class="btn">Start Counting Now</a>
+        </div>
+        <img src="impal2.jpg" alt="Healthy Eating">
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Welcome to <span style="color: #0056b3;">CaloriePro</span></h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Track Calories Easily and Accurately</h3>
+                <p>Track the calories you consume every day quickly and accurately.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Extensive Food Database</h3>
+                <p>Find thousands of foods in our comprehensive database.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Visual Progress Tracking</h3>
+                <p>Monitor your progress with easy-to-understand visual graphs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <img src="impal gambar.jpg" alt="Progress Tracking">
+        <div class="cta-content">
+            <h2>Let’s count your calories now!</h2>
+            <a href="Listmakanan.html" class="btn">Count Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 CaloriePro. All rights reserved. | <a href="privacy.html">Privacy Policy</a>
+    </footer>
+
+</body>
+</html>

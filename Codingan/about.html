@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CaloriePro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        /* Navbar */
+        .navbar {
+            width: 100%;
+            background-color: #0056b3;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar-logo h1 {
+            color: white;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .navbar-menu {
+            display: flex;
+        }
+
+        .navbar-menu li {
+            list-style-type: none;
+        }
+
+        .navbar-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-left: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-menu a:hover {
+            background-color: #004494;
+        }
+
+        /* About Section */
+        .about-section {
+            margin-top: 80px;
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .features h3 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .features .feature-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background-color: #0c6fda;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            text-align: center;
+            color: white;
+        }
+
+        .feature-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0056b3;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-logo">
+            <h1>CaloriePro</h1>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="Tampilan awal.html">HOME</a></li>
+            <li><a href="about.html">ABOUT ME</a></li>
+            <li><a href="contact.html">CONTACT ME</a></li>
+        </ul>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h2>About CaloriePro</h2>
+        <p>CaloriePro is an easy-to-use calorie tracker that helps you achieve your fitness and wellness goals. Whether you're looking to lose weight, maintain a healthy lifestyle, or monitor your daily intake, CaloriePro gives you all the tools you need to stay on track.</p>
+        <p>Our platform features a vast food database, intuitive calorie counting tools, and a visual progress tracker to make sure you're staying on top of your health journey. Join thousands of users who are transforming their lifestyles with CaloriePro.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h3>Key Features of CaloriePro</h3>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>Easy-to-Use</h4>
+                <p>Our interface is simple, intuitive, and designed for ease of use. Track your calories with just a few clicks!</p>
+            </div>
+            <div class="feature-card">
+                <h4>Comprehensive Food Database</h4>
+                <p>With thousands of foods and beverages in our database, finding the right nutrition information is easy.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Visual Progress Tracking</h4>
+                <p>See your calorie intake, track your weight progress, and stay motivated with clear visual graphs and reports.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 CaloriePro. All rights reserved.
+    </footer>
+
+</body>
+</html>

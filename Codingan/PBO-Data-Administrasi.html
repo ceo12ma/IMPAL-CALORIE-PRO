@@ -1,0 +1,307 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Paket MCU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .add-button-container {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .add-button-container button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-button-container button:hover {
+            background-color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        table th {
+            background-color: #f1f1f1;
+        }
+        .tags {
+            display: flex;
+            gap: 5px;
+        }
+        .tag {
+            background-color: #e0e0e0;
+            border-radius: 3px;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        .tag.design {
+            color: #6a1b9a;
+        }
+        .tag.product {
+            color: #1e88e5;
+        }
+        .tag.marketing {
+            color: #43a047;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .actions i {
+            cursor: pointer;
+        }
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .pagination .pages {
+            display: flex;
+            gap: 5px;
+        }
+        .pagination .pages a {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            text-decoration: none;
+            color: #000;
+        }
+        .pagination .pages a.active {
+            background-color: #000;
+            color: #fff;
+        }
+        .pagination .pages a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Data Paket MCU</h1>
+        </div>
+        <div class="add-button-container">
+            <button>Add</button>
+        </div>
+        <span>Petugas Administrasi</span>
+        <button>Back</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Harga</th>
+                    <th>Pemeriksaan</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wellness Basic<br>@olivia</td>
+                    <td>olivia@untitledui.com</td>
+                    <td>
+                        <div class="tags">
+                            <span class="tag design">Design</span>
+                            <span class="tag product">Product</span>
+                            <span class="tag marketing">Marketing</span>
+                            <span class="tag">+4</span>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phoenix Baker<br>@phoenix</td>
+                    <td>phoenix@untitledui.com</td>
+                    <td>
+                        <div class="tags">
+                            <span class="tag design">Design</span>
+                            <span class="tag product">Product</span>
+                            <span class="tag marketing">Marketing</span>
+                            <span class="tag">+4</span>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lana Steiner<br>@lana</td>
+                    <td>lana@untitledui.com</td>
+                    <td>
+                        <div class="tags">
+                            <span class="tag design">Design</span>
+                            <span class="tag product">Product</span>
+                            <span class="tag marketing">Marketing</span>
+                            <span class="tag">+4</span>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Demi Wilkinson<br>@demi</td>
+                    <td>demi@untitledui.com</td>
+                    <td>
+                        <div class="tags">
+                            <span class="tag design">Design</span>
+                            <span class="tag product">Product</span>
+                            <span class="tag marketing">Marketing</span>
+                            <span class="tag">+4</span>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Candice Wu<br>@candice</td>
+                    <td>candice@untitledui.com</td>
+                    <td>
+                        <div class="tags">
+                            <span class="tag design">Design</span>
+                            <span class="tag product">Product</span>
+                            <span class="tag marketing">Marketing</span>
+                            <span class="tag">+4</span>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Natal Craig<br>@natal</td>
+                    <td>natal@untitledui.com</td>
+                    <td>
+                        <div class="tags">
+                            <span class="tag design">Design</span>
+                            <span class="tag product">Product</span>
+                            <span class="tag marketing">Marketing</span>
+                            <span class="tag">+4</span>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Drew Cano<br>@drew</td>
+                    <td>drew@untitledui.com</td>
+                    <td>
+                        <div class="tags">
+                            <span class="tag design">Design</span>
+                            <span class="tag product">Product</span>
+                            <span class="tag marketing">Marketing</span>
+                            <span class="tag">+4</span>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Orlando Diggs<br>@orlando</td>
+                    <td>orlando@untitledui.com</td>
+                    <td>
+                        <div class="tags">
+                            <span class="tag design">Design</span>
+                            <span class="tag product">Product</span>
+                            <span class="tag marketing">Marketing</span>
+                            <span class="tag">+4</span>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Andi Lane<br>@andi</td>
+                    <td>andi@untitledui.com</td>
+                    <td>
+                        <div class="tags">
+                            <span class="tag design">Design</span>
+                            <span class="tag product">Product</span>
+                            <span class="tag marketing">Marketing</span>
+                            <span class="tag">+4</span>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Kate Morrison<br>@kate</td>
+                    <td>kate@untitledui.com</td>
+                    <td>
+                        <div class="tags">
+                            <span class="tag design">Design</span>
+                            <span class="tag product">Product</span>
+                            <span class="tag marketing">Marketing</span>
+                            <span class="tag">+4</span>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button>Previous</button>
+            <div class="pages">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">...</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+            </div>
+            <button>Next</button>
+        </div>
+    </div>
+</body>
+</html>

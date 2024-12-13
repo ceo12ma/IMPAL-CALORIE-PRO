@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Petugas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+        .header {
+            background-color: white;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between; /* Space out items horizontally */
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header .nav {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            gap: 20px; /* Add spacing between Petugas Administrasi and Logout button */
+        }
+        .header .nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .header .nav .logout {
+            background-color: black;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+            background: none; /* Remove background from the container */
+            height: 100vh;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://storage.googleapis.com/a1aa/image/6MBL2sfIBQyIOym5ayZvycXOtmNuOA5Xr46du3z9uHHjOD9JA.jpg') no-repeat center center;
+            background-size: cover;
+            filter: blur(4px); /* Apply blur here */
+            z-index: -1; /* Make sure the blur is behind the content */
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        .card h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+        .card p {
+            color: gray;
+            font-size: 14px;
+        }
+        .card button {
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                height: auto;
+                padding: 20px;
+            }
+            .card {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Dashboard Petugas</h1>
+        <div class="nav">
+            <a href="#">Petugas Administrasi</a>
+            <button class="logout">Logout</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h2>Paket MCU</h2>
+            <p>Kontrol Paket MCU (CRUD)</p>
+            <button>Kontrol Paket MCU</button>
+        </div>
+        <div class="card">
+            <h2>Laporan MCU</h2>
+            <p>Menampilkan Laporan MCU Periode Tertentu</p>
+            <button>Laporan MCU</button>
+        </div>
+        <div class="card">
+            <h2>Pasien MCU</h2>
+            <p>Pencarian Daftar Pasien Tertentu</p>
+            <button>Pasien MCU</button>
+        </div>
+    </div>
+</body>
+</html>

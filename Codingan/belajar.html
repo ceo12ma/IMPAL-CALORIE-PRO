@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <style>
+            body {
+              margin: 0;
+              font-family: Arial, sans-serif;
+              display: flex;
+              flex-direction: column;
+              min-height: 100vh;
+            }
+
+            .navbar {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              background-color: #87CEEB; 
+              padding: 30px 20px;
+              color: white;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar h2 {
+              margin: 0;
+              font-size: 20px;
+            }
+
+            .container {
+              display: flex;
+              flex-direction: row;
+              padding: 20px;
+              gap: 20px;
+              flex-wrap: wrap;
+              flex-grow: 1;
+            }
+
+            .container img {
+              width: 500px;
+              border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              object-fit: cover;
+            }
+
+            .tabs {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              max-width: 300px;
+              gap: 10px;
+            }
+
+            .tabs button {
+              margin-bottom: 10px;
+              padding: 10px 20px;
+              font-size: 16px;
+              cursor: pointer;
+              border: none;
+              border-radius: 5px;
+              background-color: #87CEEB;
+              color: white;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .tabs button.active {
+              background-color: #808080;
+            }
+
+            .tab-content {
+              margin-top: 20px;
+              font-size: 16px;
+              color: #333;
+              padding: 10px;
+              background-color: #f9f9f9;
+              border: 1px solid #f9f9f9;
+              border-radius: 5px;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              width: 100%;
+            }
+
+            .hidden {
+              display: none;
+            }
+
+            .input-container {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            }
+
+            .input-container input[type="text"] {
+              flex: 1;
+              padding: 10px 15px;
+              font-size: 16px;
+              border: 1px solid #ddd;
+              border-radius: 5px;
+              outline: none;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              transition: border 0.3s ease;
+            }
+
+            .input-container input[type="text"]:focus {
+              border-color: #0090FF;
+            }
+
+            .input-container button {
+              padding: 10px 20px;
+              font-size: 16px;
+              color: white;
+              background-color:#87CEEB;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              transition: background-color 0.3s ease;
+              margin-top: 10px;
+            }
+
+            .input-container button:hover {
+              background-color: #87CEEB;
+            }
+            
+             @media (max-width: 768px) {
+             .container {
+               flex-direction: column;
+               align-items: center;
+             }
+
+             .container img {
+               width: 100%;
+             }
+             
+
+            .tabs {
+              width: 100%;
+              max-width: 500px;
+            }
+          }
+          
+          @media (max-width: 480px) {
+            .navbar {
+              flex-direction: column;
+              text-align: center;
+            }
+          }
+
+            .tabs button {
+              font-size: 14px;
+              padding: 8px 16px;
+            }
+
+            .input-container input[type="text"] {
+              font-size: 14px;
+            }
+
+            .input-container button {
+              font-size: 14px;
+              padding: 8px 16px;
+            }
+      </style>
+    </head>
+    <body>
+        <div class="navbar">
+    </div>
+    <div class="container">
+      <img src= "https://baa.telkomuniversity.ac.id/wp-content/uploads/2021/01/edit-5-scaled-1-1-1.jpg"
+           alt="Beautiful Landscape" />
+      <div class="tabs">
+        <div>
+          <button class="tab-button active" onclick="showTab('tab1')">Tab 1</button>
+          <button class="tab-button" onclick="showTab('tab2')">Tab 2</button>
+        </div>
+        <div>
+          <div class="tab-content" id="tab1">
+            <div class="input-container">
+              <input type="text" placeholder="Enter your text here tab 1" />
+              <button>Send</button>
+            </div>
+          </div>
+          <div class="tab-content hidden" id="tab2">
+            <div class="input-container">
+              <input type="text" placeholder="Enter your text here tab 2" />
+              <button>Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showTab(tabId) {
+        const contents = document.querySelectorAll(".tab-content");
+        contents.forEach((content) => content.classList.add("hidden"));
+
+        const buttons = document.querySelectorAll(".tab-button");
+        buttons.forEach((button) => button.classList.remove("active"));
+
+        document.getElementById(tabId).classList.remove("hidden");
+        document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add("active");
+      }
+    </script>
+    </body>
+</html>
